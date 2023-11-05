@@ -1,22 +1,31 @@
 import cv2
 
-image_name = "/Users/dogugnr/Documents/Yazılım/PythonPyCharm/A.jpg" # image name
-img = cv2.imread(image_name) # read image
+# Resim adı
+image_name = "/Users/dogugnr/Documents/Yazılım/PythonPyCharm/A.jpg"
+# Görüntüyü oku
+img = cv2.imread(image_name)
 
+# Görüntüyü gri tonlamaya dönüştür
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-# flatten channels
-# use hist function to acquire histograms and normalized histograms of channels
-size_y = img.shape[0] # get shape
+
+# Kanalları düzleştir
+# Kanalların histogram ve normalleştirilmiş histogramını elde etmek için hist işlevini kullanın
+size_y = img.shape[0]  # şekli al
 size_x = img.shape[1]
 
-flattened = img.reshape([size_x*size_y])  # Flatten matrices
+flattened = img.reshape([size_x * size_y])  # Matrisleri düzleştir
 
-from matplotlib import pyplot as plt # import pylot
-rhist,_ ,_ = plt.hist(flattened, bins=256)# ,log=True)
-plt.show() # hist functions returns number values for each bin
+# pylot'u içe aktar
+from matplotlib import pyplot as plt
 
-rhist,_ ,_ = plt.hist(flattened, bins=32)# ,log=True)
-plt.show() # hist functions returns number values for each bin
+# 256 binli histogram oluştur ve göster
+rhist, _, _ = plt.hist(flattened, bins=256)  #, log=True)
+plt.show()
 
-rhist,_ ,_ = plt.hist(flattened, bins=8)# ,log=True)
-plt.show() # hist functions returns number values for each bin
+# 32 binli histogram oluştur ve göster
+rhist, _, _ = plt.hist(flattened, bins=32)  #, log=True)
+plt.show()
+
+# 8 binli histogram oluştur ve göster
+rhist, _, _ = plt.hist(flattened, bins=8)  #, log=True)
+plt.show()
