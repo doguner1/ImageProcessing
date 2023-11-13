@@ -25,7 +25,7 @@ def show_histogram(image_path, num_bins=256):
 
 
 # Resim adı ve isteğe bağlı olarak bin sayısını belirleyerek fonksiyonu çağırma işlemi.
-image_name = "/Users/dogugnr/Documents/Yazılım/PythonPyCharm/A.jpg"
+image_name = "/Users/dogugnr/Documents/Yazılım/PythonPyCharm/HistogramOdev1/A.jpg"
 show_histogram(image_name, num_bins=256)
 show_histogram(image_name, num_bins=32)
 show_histogram(image_name, num_bins=8)
